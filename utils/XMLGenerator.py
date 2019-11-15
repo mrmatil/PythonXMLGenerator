@@ -35,7 +35,7 @@ class GenerateXMLFromYears:
                 if tempTeamsList['divName'] != "{}":
                     ET.SubElement(tempTeam, "Division").text = "{}".format(tempTeamsList['divName'])
             except:
-                print("Some error")
+                print("skipped something")
 
         print("{} completed".format(self.year))
         tree = ET.ElementTree(teamsYear)
