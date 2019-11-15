@@ -8,7 +8,7 @@ class main:
 
     def getYearsFromUser(self):
 
-        tempInput = input("Please enter some years from 2012 to 2019, with ',' separating it")
+        tempInput = input("Please enter some years from 2015 to 2019, with ',' separating it")
         tempYears = tempInput.split(",")
         tempYearsInt = list(map(int,tempYears))
         # print(tempYearsInt)

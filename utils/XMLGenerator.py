@@ -28,12 +28,14 @@ class GenerateXMLFromYears:
                 tempTeam = ET.SubElement(NbaTeams,"team", name="{}".format(tempTeamsList['fullName']))
             else:
                 tempTeam = ET.SubElement(nonNbaTeams,"team", name="{}".format(tempTeamsList['fullName']))
-
-            ET.SubElement(tempTeam,"Nickname").text = "{}".format(tempTeamsList['nickname'])
-            ET.SubElement(tempTeam,"teamShortName").text = "{}".format(tempTeamsList['teamShortName'])
-            ET.SubElement(tempTeam,"Conference").text = "{}".format(tempTeamsList['confName'])
-            if tempTeamsList['divName'] != "{}":
-                ET.SubElement(tempTeam, "Division").text = "{}".format(tempTeamsList['divName'])
+            try:
+                ET.SubElement(tempTeam,"Nickname").text = "{}".format(tempTeamsList['nickname'])
+                ET.SubElement(tempTeam, "teamShortName").text = "{}".format(tempTeamsList['teamShortName'])
+                ET.SubElement(tempTeam,"Conference").text = "{}".format(tempTeamsList['confName'])
+                if tempTeamsList['divName'] != "{}":
+                    ET.SubElement(tempTeam, "Division").text = "{}".format(tempTeamsList['divName'])
+            except:
+                print("Some error")
 
         print("{} completed".format(self.year))
         tree = ET.ElementTree(teamsYear)
