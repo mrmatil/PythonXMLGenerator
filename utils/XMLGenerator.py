@@ -18,7 +18,6 @@ class GenerateXMLFromYears:
     def parseJsonIntoObjects(self):
         jsonTemp = self.getData()
         allTeams = jsonTemp['league']['standard']
-
         teamsYear = ET.Element("Teams", year = "{}".format(self.year))
         NbaTeams = ET.SubElement(teamsYear,"NbaTeams")
         nonNbaTeams = ET.SubElement(teamsYear,"NonNbaTeams")
@@ -35,7 +34,7 @@ class GenerateXMLFromYears:
                 if tempTeamsList['divName'] != "{}":
                     ET.SubElement(tempTeam, "Division").text = "{}".format(tempTeamsList['divName'])
             except:
-                print("skipped something")
+                pass
 
         print("{} completed".format(self.year))
         tree = ET.ElementTree(teamsYear)
