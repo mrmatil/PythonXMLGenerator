@@ -1,6 +1,6 @@
 # PythonXMLGenerator
 
-### Simple App written in python for 2019/2020 XML Class
+### Simple App written in python for 2019/2020 XML and Python Classes
 ##### App gets data (NBA Teams) for years that user picks, using REST Api
 ##### Then XML code is generated with XML (etree) python library 
 <br>
